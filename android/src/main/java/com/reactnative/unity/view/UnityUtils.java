@@ -43,7 +43,11 @@ public class UnityUtils {
     public static boolean isUnityPaused() {
         return _isUnityPaused;
     }
-
+	public static void quit() {
+        unityPlayer.quit();
+        _isUnityReady = false;
+        unityPlayer = null;
+    }
     public static void createPlayer(final Activity activity, final CreateCallback callback) {
         if (unityPlayer != null) {
             callback.onReady();
